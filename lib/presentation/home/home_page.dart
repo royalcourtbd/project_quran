@@ -53,6 +53,9 @@ class HomePage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 15.px,
+                  ),
                   const SearchSection(),
                   SizedBox(height: 20.px),
                   Padding(
