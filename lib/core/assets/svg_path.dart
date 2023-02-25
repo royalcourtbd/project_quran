@@ -9,4 +9,6 @@ class SvgPath {
   static const String icSurahIndex = 'assets/images/ic_surah_index.svg';
   static const String icSearch = 'assets/images/ic_search.svg';
   static const String icFilter = 'assets/images/ic_filter.svg';
+  static const String icArrowBack = 'assets/images/ic_arrow_back.svg';
+  static const String icArrowForword = 'assets/images/arrow_forword.svg';
 }

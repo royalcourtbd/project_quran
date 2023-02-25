@@ -9,6 +9,8 @@ import 'package:project_quran/presentation/home/widgets/quick_access_surah_secti
 import 'package:project_quran/presentation/home/widgets/search_section.dart';
 import 'package:project_quran/presentation/home/widgets/surah_list_widget.dart';
 import 'package:project_quran/presentation/home/widgets/tab_button.dart';
+import 'package:project_quran/presentation/quick_access/quick_access_page.dart';
+import 'package:project_quran/presentation/search/search_page.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomePage extends StatelessWidget {
@@ -106,6 +108,7 @@ class HomePage extends StatelessWidget {
                             index: 0,
                             onTap: () {
                               tabButtonController.currentIndex.value = 0;
+                              Get.to(() => QuickAccessPage());
                             },
                           ),
                           SizedBox(width: 0.02.px),
@@ -114,6 +117,7 @@ class HomePage extends StatelessWidget {
                             index: 1,
                             onTap: () {
                               tabButtonController.currentIndex.value = 1;
+                              Get.to(() => const SearchPage());
                             },
                           ),
                           TabButton(
