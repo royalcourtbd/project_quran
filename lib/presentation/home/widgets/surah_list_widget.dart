@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/home/list/all_surah_list.dart';
-import 'package:project_quran/presentation/surah_details/surah_details_page.dart';
+
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import '../../surah_details/surah_details_page.dart';
 
 class SurahListWidget extends StatelessWidget {
   const SurahListWidget({

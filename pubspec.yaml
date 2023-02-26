@@ -40,6 +40,7 @@ dependencies:
   animate_do: ^3.0.2
   flutter_svg: ^2.0.1
   responsive_sizer: ^3.1.1
+  custom_navigation_bar: ^0.8.2
 
 dev_dependencies:
   flutter_test:
@@ -81,8 +82,8 @@ flutter:
     - family: SurahName
       fonts:
         - asset: assets/fonts/sura_names.ttf
-  #         style: italic
-    - family: KFGQPC 
+    #         style: italic
+    - family: KFGQPC
       fonts:
         - asset: assets/fonts/KFGQPC_Uthmanic_Script_HAFS_Regular.ttf
   #

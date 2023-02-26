@@ -17,4 +17,8 @@ class SvgPath {
   static const String icPageNo = 'assets/images/details_page_bg_images.svg';
   static const String icMakkaBig = 'assets/images/makka_image.svg';
   static const String icShowIndex = 'assets/images/show_index.svg';
+  static const String icBook = 'assets/images/book_icon.svg';
+  static const String icBookmark = 'assets/images/bookmark_icon.svg';
+  static const String icHome = 'assets/images/home_icon.svg';
+  static const String icMemorize = 'assets/images/memorize_icon.svg';
 }
