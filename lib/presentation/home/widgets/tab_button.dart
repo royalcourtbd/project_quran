@@ -24,7 +24,7 @@ class TabButton extends StatelessWidget {
                 borderRadius: tabButtonController.currentIndex.value == index
                     ? BorderRadius.circular(4.px)
                     : tabButtonController.currentIndex.value == 0 ||
-                            tabButtonController.currentIndex == 3
+                            tabButtonController.currentIndex.value == 3
                         ? BorderRadius.zero
                         : BorderRadius.horizontal(
                             left: Radius.circular(5.px),
@@ -37,13 +37,7 @@ class TabButton extends StatelessWidget {
                         horizontal: BorderSide.none, vertical: BorderSide.none)
                     : Border.all(
                         color: const Color(0xff6F767D).withOpacity(0.1),
-                        width: 0.2
-                        //  BorderSide(
-                        //   color: const Color(0xff6F767D).withOpacity(
-                        //     0.1,
-                        //   ),
-                        // ),
-                        ),
+                        width: 0.2),
               ),
               child: Text(
                 title,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
+import 'package:project_quran/data/common/back_button.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/quick_access/widgets/quick_acces_page_surah_list_widget%20copy.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -15,97 +15,110 @@ class QuickAccessPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF1F4F8),
-      appBar: AppBar(
-        backgroundColor: const Color(0xffF1F4F8),
-        leadingWidth: 86,
-        leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.px, vertical: 1.px),
-          child: GestureDetector(
-            onTap: () {
-              Get.back();
-            },
-            child: Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: const Color(0xffD6E5E1).withOpacity(0.25),
-                borderRadius: BorderRadius.circular(10.px),
-              ),
-              child: SvgPicture.asset(
-                SvgPath.icArrowBack,
-                colorFilter: const ColorFilter.mode(
-                  QuranColors.outerSpace,
-                  BlendMode.srcATop,
+      body: Column(
+        children: [
+          SizedBox(height: 35.px),
+          const AppBarWidget(),
+          SizedBox(height: 10.px),
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 9.px),
+                  child: Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 1.5.px, vertical: 1.5.px),
+                    height: 45.px,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.px),
+                      border: Border.all(
+                        width: 1.5.px,
+                        color: QuranColors.greenCrayola,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        QuickAccessButton(
+                          index: 0,
+                          buttonText: 'Sura',
+                          onTap: () {
+                            tabButtonController.quickAccessCurrentIndex.value =
+                                0;
+                          },
+                        ),
+                        SizedBox(
+                          width: 4.px,
+                        ),
+                        QuickAccessButton(
+                          index: 1,
+                          buttonText: 'Juz',
+                          onTap: () {
+                            tabButtonController.quickAccessCurrentIndex.value =
+                                1;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
+              )
+            ],
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 15.px,
+                  ),
+                  const QuickAccessPageSurahListWidget(),
+                ],
               ),
             ),
           ),
-        ),
-        title: Text(
-          'Quick Access',
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                fontSize: 18.px,
-              ),
-        ),
-        centerTitle: true,
-        elevation: 0,
+        ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 24..px,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 9.px),
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 1.5.px, vertical: 1.5.px),
-                      height: 45.px,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.px),
-                        border: Border.all(
-                          width: 1.5.px,
-                          color: QuranColors.greenCrayola,
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          QuickAccessButton(
-                            index: 0,
-                            buttonText: 'Sura',
-                            onTap: () {
-                              tabButtonController
-                                  .quickAccessCurrentIndex.value = 0;
-                            },
-                          ),
-                          SizedBox(
-                            width: 4.px,
-                          ),
-                          QuickAccessButton(
-                            index: 1,
-                            buttonText: 'Juz',
-                            onTap: () {
-                              tabButtonController
-                                  .quickAccessCurrentIndex.value = 1;
-                            },
-                          ),
-                        ],
-                      ),
+    );
+  }
+}
+
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      height: 64.px,
+      decoration: const BoxDecoration(),
+      child: Row(
+        children: [
+         
+          Padding(
+            padding: EdgeInsets.only(left: 12.px),
+            child: CustomBackButton(
+                onTap: () {
+                  Get.back();
+                },
+                svgPath: SvgPath.icArrowBack),    
+          ),
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(),
+              child: Text(
+                'Quick Access',
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      fontSize: 18.px,
                     ),
-                  ),
-                )
-              ],
+              ),
             ),
-            SizedBox(
-              height: 15.px,
-            ),
-            const QuickAccessPageSurahListWidget(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

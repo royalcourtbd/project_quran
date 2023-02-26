@@ -64,24 +64,30 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 15.px),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         DashboardItem(
+                          onTap: () => Get.to(() => QuickAccessPage()),
                           iconPath: SvgPath.icClock,
                           title: 'Last Read',
-                          bgColor: Color(0xffF4F8FF),
+                          bgColor: const Color(0xffF4F8FF),
                         ),
                         DashboardItem(
+                            onTap: () {
+                              Get.to(() => const SearchPage());
+                            },
                             iconPath: SvgPath.icPlane,
                             title: 'Jump Ayah',
-                            bgColor: Color(0xffF9F5FF)),
+                            bgColor: const Color(0xffF9F5FF)),
                         DashboardItem(
+                            onTap: () {},
                             iconPath: SvgPath.icCalendar,
                             title: 'Daily Ayah',
-                            bgColor: Color(0xffFFF5E9)),
+                            bgColor: const Color(0xffFFF5E9)),
                         DashboardItem(
+                            onTap: () {},
                             iconPath: SvgPath.icFavorite,
                             title: 'Support Us',
-                            bgColor: Color(0xffFFF2F7)),
+                            bgColor: const Color(0xffFFF2F7)),
                       ],
                     ),
                   ),
@@ -108,7 +114,6 @@ class HomePage extends StatelessWidget {
                             index: 0,
                             onTap: () {
                               tabButtonController.currentIndex.value = 0;
-                              Get.to(() => QuickAccessPage());
                             },
                           ),
                           SizedBox(width: 0.02.px),
@@ -117,7 +122,6 @@ class HomePage extends StatelessWidget {
                             index: 1,
                             onTap: () {
                               tabButtonController.currentIndex.value = 1;
-                              Get.to(() => const SearchPage());
                             },
                           ),
                           TabButton(

@@ -17,7 +17,6 @@ class Initial extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.light,
         statusBarIconBrightness: Brightness.dark,
       ),
     );

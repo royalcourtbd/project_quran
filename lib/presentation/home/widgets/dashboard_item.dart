@@ -8,43 +8,48 @@ class DashboardItem extends StatelessWidget {
   final String iconPath;
   final String title;
   final Color bgColor;
-  const DashboardItem({
+  VoidCallback onTap;
+   DashboardItem({
     super.key,
     required this.iconPath,
     required this.title,
+    required this.onTap,
     this.bgColor = Colors.white24,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: QuranScreen.width() / 4.7,
-      height: QuranScreen.width() / 5,
-      alignment: Alignment.centerLeft,
-      padding: EdgeInsets.symmetric(horizontal: 9.px, vertical: 10.px),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14.px),
-        color: bgColor,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            iconPath,
-            height: QuranScreen.width() * 0.06666666666,
-            width: QuranScreen.width() * 0.06666666666,
-          ),
-          SizedBox(height: 12.px),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontWeight: FontWeight.w600,
-                  fontFamily: GoogleFonts.poppins().fontFamily,
-                  fontSize: QuranScreen.width() * 0.029,
-                ),
-          ),
-        ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: QuranScreen.width() / 4.7,
+        height: QuranScreen.width() / 5,
+        alignment: Alignment.centerLeft,
+        padding: EdgeInsets.symmetric(horizontal: 9.px, vertical: 10.px),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14.px),
+          color: bgColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              iconPath,
+              height: QuranScreen.width() * 0.06666666666,
+              width: QuranScreen.width() * 0.06666666666,
+            ),
+            SizedBox(height: 12.px),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontFamily: GoogleFonts.poppins().fontFamily,
+                    fontSize: QuranScreen.width() * 0.029,
+                  ),
+            ),
+          ],
+        ),
       ),
     );
   }

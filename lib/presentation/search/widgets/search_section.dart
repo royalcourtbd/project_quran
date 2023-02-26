@@ -5,8 +5,8 @@ import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class Search extends StatelessWidget {
-  const Search({
+class SearchBar extends StatelessWidget {
+  const SearchBar({
     super.key,
   });
 
@@ -23,7 +23,6 @@ class Search extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              print('object');
               Get.back();
             },
             child: Container(
@@ -67,14 +66,18 @@ class Search extends StatelessWidget {
                   disabledBorder: InputBorder.none,
                   focusedErrorBorder: InputBorder.none,
                   hintText: 'Search Sura Name, Sura No or Juz',
+                  hintStyle: TextStyle(
+                    fontSize: 14.px,
+                    fontWeight: FontWeight.w400,
+                  ),
                   suffixIcon: Padding(
-                    padding: EdgeInsets.all(14.0.px),
+                    padding: EdgeInsets.all(16.0.px),
                     child: SvgPicture.asset(
                       SvgPath.icFilter,
                     ),
                   ),
                   prefixIcon: Padding(
-                    padding: EdgeInsets.all(11.0.px),
+                    padding: EdgeInsets.all(13.0.px),
                     child: SvgPicture.asset(
                       SvgPath.icSearch,
                     ),
@@ -82,7 +85,7 @@ class Search extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

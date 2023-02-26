@@ -26,57 +26,49 @@ class QuickAccessSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 12.px),
-        Padding(
-          padding: EdgeInsets.only(left: 15.px),
-          child: Container(
-            alignment: Alignment.centerLeft,
-            height: 61.px,
-            child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: quickAccessSurahList.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.only(right: 7.px),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: QuranScreen.width() * 0.03333333333,
-                        vertical: 10.px),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.px),
-                      color: QuranColors.whiteAntiFlash,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          quickAccessSurahList[index].surahName,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontSize:
-                                      QuranScreen.width() * 0.03333333333),
-                        ),
-                        SizedBox(
-                          height: 5.px,
-                        ),
-                        Text(
-                          'Ayah-${quickAccessSurahList[index].ayah}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontSize: QuranScreen.width() * 0.025,
-                                  fontWeight: FontWeight.w400,
-                                  color: QuranColors.auroMetalSaurus),
-                        ),
-                      ],
-                    ),
+        Container(
+          margin: EdgeInsets.only(left: 15.px),
+          alignment: Alignment.centerLeft,
+          height: 61.px,
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: quickAccessSurahList.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.only(right: 12.px),
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: QuranScreen.width() * 0.03333333333,
+                      vertical: 10.px),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.px),
+                    color: QuranColors.whiteAntiFlash,
                   ),
-                );
-              },
-            ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        quickAccessSurahList[index].surahName,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontSize: QuranScreen.width() * 0.03333333333),
+                      ),
+                      SizedBox(
+                        height: 5.px,
+                      ),
+                      Text(
+                        'Ayah-${quickAccessSurahList[index].ayah}',
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontSize: QuranScreen.width() * 0.025,
+                            fontWeight: FontWeight.w400,
+                            color: QuranColors.auroMetalSaurus),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
         ),
       ],
