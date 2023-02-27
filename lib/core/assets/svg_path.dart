@@ -12,6 +12,7 @@ class SvgPath {
   static const String icArrowBack = 'assets/images/ic_arrow_back.svg';
   static const String icArrowForword = 'assets/images/arrow_forword.svg';
   static const String icMoreHorizontal = 'assets/images/horizontal_more.svg';
+  static const String icAppBar = 'assets/images/bg.svg';
   static const String icSetting = 'assets/images/settings.svg';
   static const String icPin = 'assets/images/pin.svg';
   static const String icPageNo = 'assets/images/details_page_bg_images.svg';

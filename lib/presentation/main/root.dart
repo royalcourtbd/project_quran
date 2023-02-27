@@ -7,6 +7,7 @@ import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/home/home_page.dart';
 import 'package:project_quran/presentation/quick_access/quick_access_page.dart';
 import 'package:project_quran/presentation/search/search_page.dart';
+import 'package:project_quran/presentation/subjectwise/subjectwise_page.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MainPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   TabButtonController tabButtonController = Get.put(TabButtonController());
   List pages = [
-    HomePage(),
+    const SubjectWisePage(),
     QuickAccessPage(),
     const SearchPage(),
     QuickAccessPage(),

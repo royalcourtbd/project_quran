@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/core/util/util.dart';
+import 'package:project_quran/data/common/custom_appbar.dart';
 import 'package:project_quran/presentation/home/widgets/dashboard_item.dart';
 import 'package:project_quran/presentation/home/widgets/quick_access_surah_section.dart';
 import 'package:project_quran/presentation/home/widgets/search_section.dart';
@@ -22,33 +21,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Stack(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: 120.px,
-                child:
-                    SvgPicture.asset('assets/images/bg.svg', fit: BoxFit.cover),
-              ),
-              Positioned(
-                bottom: 12.px,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.px),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(SvgPath.icMenu),
-                      SizedBox(width: 16.px),
-                      Text(
-                        'Quran Majeed',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              fontSize: QuranScreen.width() * 0.05,
-                            ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
+          CustomAppBar(
+            appBarTitle: 'Quran Majeed',
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -56,7 +30,7 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 15.px),
-                   SearchSection(),
+                  SearchSection(),
                   SizedBox(height: 20.px),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.px),

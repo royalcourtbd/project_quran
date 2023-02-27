@@ -5,6 +5,7 @@ import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/home/list/all_surah_list.dart';
 import 'package:project_quran/presentation/sura_musaf_details/surah_details_musaf_page.dart';
+import 'package:project_quran/presentation/surah_details/surah_details_page.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -26,7 +27,7 @@ class SurahListWidget extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               Get.to(
-                () => SurahDetailsMusafPage(
+                () => SurahDetailsPage(
                   surahModel: allSurahList[index],
                 ),
               );
