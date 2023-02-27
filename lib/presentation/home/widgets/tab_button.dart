@@ -21,18 +21,18 @@ class TabButton extends StatelessWidget {
         child: Obx(() => Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                borderRadius: tabButtonController.currentIndex.value == index
+                borderRadius: tabButtonController.tabCurrentIndex.value == index
                     ? BorderRadius.circular(4.px)
-                    : tabButtonController.currentIndex.value == 0 ||
-                            tabButtonController.currentIndex.value == 3
+                    : tabButtonController.tabCurrentIndex.value == 0 ||
+                            tabButtonController.tabCurrentIndex.value == 3
                         ? BorderRadius.zero
                         : BorderRadius.horizontal(
                             left: Radius.circular(5.px),
                             right: Radius.circular(5.px)),
-                color: tabButtonController.currentIndex.value == index
+                color: tabButtonController.tabCurrentIndex.value == index
                     ? Theme.of(context).primaryColor
                     : QuranColors.whiteAntiFlash,
-                border: tabButtonController.currentIndex.value == index
+                border: tabButtonController.tabCurrentIndex.value == index
                     ? const Border.symmetric(
                         horizontal: BorderSide.none, vertical: BorderSide.none)
                     : Border.all(
@@ -42,7 +42,7 @@ class TabButton extends StatelessWidget {
               child: Text(
                 title,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: tabButtonController.currentIndex.value == index
+                      color: tabButtonController.tabCurrentIndex.value == index
                           ? Theme.of(context).cardColor
                           : QuranColors.outerSpace,
                     ),

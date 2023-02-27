@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 
 class TabButtonController extends GetxController {
-  RxInt currentIndex = 0.obs;
+  RxInt tabCurrentIndex = 0.obs;
+  RxInt pageCurrentIndex = 0.obs;
   RxInt quickAccessCurrentIndex = 0.obs;
+  RxString selectItem = ''.obs;
 }

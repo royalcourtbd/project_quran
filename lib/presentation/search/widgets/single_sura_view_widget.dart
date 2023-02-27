@@ -40,9 +40,7 @@ class SingleSuraViewWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  width: 14.px,
-                ),
+                SizedBox(width: 14.px),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -65,14 +63,18 @@ class SingleSuraViewWidget extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                   ),
                         ),
-                        SizedBox(
-                          width: 5.px,
-                        ),
-                        SvgPicture.asset(
-                          allSurahList[0].revelationType,
-                          height: 15.px,
-                          width: 14.px,
-                        ),
+                        SizedBox(width: 5.px),
+                        allSurahList[0].revelationType == 'Maccan'
+                                  ? SvgPicture.asset(
+                                      SvgPath.icMakka,
+                                      height: 15.px,
+                                      width: 14.px,
+                                    )
+                                  : SvgPicture.asset(
+                                      SvgPath.icMadina,
+                                      height: 15.px,
+                                      width: 14.px,
+                                    ),
                       ],
                     )
                   ],

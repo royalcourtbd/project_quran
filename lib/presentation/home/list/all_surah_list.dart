@@ -245,3 +245,4 @@ List<SurahModel> allSurahList = [
     ],
   ),
 ];
+

@@ -55,10 +55,8 @@ class HomePage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 15.px,
-                  ),
-                  const SearchSection(),
+                  SizedBox(height: 15.px),
+                   SearchSection(),
                   SizedBox(height: 20.px),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.px),
@@ -72,9 +70,7 @@ class HomePage extends StatelessWidget {
                           bgColor: const Color(0xffF4F8FF),
                         ),
                         DashboardItem(
-                            onTap: () {
-                              Get.to(() => const SearchPage());
-                            },
+                            onTap: () => Get.to(() => const SearchPage()),
                             iconPath: SvgPath.icPlane,
                             title: 'Jump Ayah',
                             bgColor: const Color(0xffF9F5FF)),
@@ -113,7 +109,7 @@ class HomePage extends StatelessWidget {
                             title: 'Sura',
                             index: 0,
                             onTap: () {
-                              tabButtonController.currentIndex.value = 0;
+                              tabButtonController.tabCurrentIndex.value = 0;
                             },
                           ),
                           SizedBox(width: 0.02.px),
@@ -121,30 +117,28 @@ class HomePage extends StatelessWidget {
                             title: 'Juz',
                             index: 1,
                             onTap: () {
-                              tabButtonController.currentIndex.value = 1;
+                              tabButtonController.tabCurrentIndex.value = 1;
                             },
                           ),
                           TabButton(
                             title: 'Page',
                             index: 2,
                             onTap: () {
-                              tabButtonController.currentIndex.value = 2;
+                              tabButtonController.tabCurrentIndex.value = 2;
                             },
                           ),
                           TabButton(
                             title: 'Hizb',
                             index: 3,
                             onTap: () {
-                              tabButtonController.currentIndex.value = 3;
+                              tabButtonController.tabCurrentIndex.value = 3;
                             },
                           ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 11.px,
-                  ),
+                  SizedBox(height: 11.px),
                   const SurahListWidget(),
                 ],
               ),

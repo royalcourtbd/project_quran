@@ -86,6 +86,47 @@ class SurahDetailsPage extends StatelessWidget {
           ),
         ],
       ),
+      extendBody: true,
+      bottomNavigationBar: Container(
+        height: 120.px,
+        decoration: const BoxDecoration(
+          //color: Colors.red,
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/bottombar.png',
+            ),
+            fit: BoxFit.fill,
+          ),
+        ),
+        alignment: Alignment.bottomCenter,
+        child: BottomNavigationBar(
+          
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          unselectedItemColor: const Color(0xff788A95),
+          elevation: 0,
+          unselectedLabelStyle: TextStyle(
+            color: const Color(0xff788A95),
+            fontSize: 10.px,
+          ),
+          selectedLabelStyle: TextStyle(
+            color: QuranColors.greenCrayola,
+            fontSize: 10.px,
+          ),
+          items: [
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icTranslate), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icOpenBook), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icPLay), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icCategory), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icPaste), label: ''),
+          ],
+        ),
+      ),
     );
   }
 

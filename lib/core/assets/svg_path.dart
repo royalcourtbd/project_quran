@@ -21,4 +21,11 @@ class SvgPath {
   static const String icBookmark = 'assets/images/bookmark_icon.svg';
   static const String icHome = 'assets/images/home_icon.svg';
   static const String icMemorize = 'assets/images/memorize_icon.svg';
+  static const String icCategory = 'assets/images/category.svg';
+  static const String icPaste = 'assets/images/paste.svg';
+  static const String icOpenBook = 'assets/images/open_book.svg';
+  static const String icPLay = 'assets/images/play.svg';
+  static const String icTranslate = 'assets/images/translate.svg';
+  static const String icDownArrow = 'assets/images/down_arrow.svg';
+  static const String icBottombar = 'assets/images/bottombar.png';
 }

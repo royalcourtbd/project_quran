@@ -54,9 +54,7 @@ class QuickAccessSection extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontSize: QuranScreen.width() * 0.03333333333),
                       ),
-                      SizedBox(
-                        height: 5.px,
-                      ),
+                      SizedBox(height: 5.px),
                       Text(
                         'Ayah-${quickAccessSurahList[index].ayah}',
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(

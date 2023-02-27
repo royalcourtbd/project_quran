@@ -124,9 +124,7 @@ class QuickAccessPageSurahListWidget extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                width: 14.px,
-                              ),
+                              SizedBox(width: 14.px),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -155,9 +153,7 @@ class QuickAccessPageSurahListWidget extends StatelessWidget {
                                               fontWeight: FontWeight.w400,
                                             ),
                                       ),
-                                      SizedBox(
-                                        width: 5.px,
-                                      ),
+                                      SizedBox(width: 5.px),
                                       SvgPicture.asset(
                                         allSurahList[index].revelationType,
                                         height: 15.px,

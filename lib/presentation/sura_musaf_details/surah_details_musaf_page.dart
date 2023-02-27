@@ -10,7 +10,6 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SurahDetailsMusafPage extends StatelessWidget {
   SurahModel surahModel;
-
   SurahDetailsMusafPage({super.key, required this.surahModel});
 
   @override
@@ -101,28 +100,28 @@ class SurahDetailsMusafPage extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: 15.px, vertical: 7.px),
                     child: Container(
+                      alignment: Alignment.centerRight,
                       padding: EdgeInsets.symmetric(
                           horizontal: 15.px, vertical: 15.px),
                       decoration: BoxDecoration(
                         color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.circular(10.px),
                       ),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Wrap(
-                          children: surahModel.listOfAyat
-                              .toString()
-                              .split(" ")
-                              .map((word) => Text(
-                                    '${word}1',
-                                    style: TextStyle(
-                                      fontFamily: 'KFGQPC',
-                                      fontSize: 22.px,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ))
-                              .toList(),
-                        ),
+                      child: Wrap(
+                        children: [
+                          Text(
+                            surahModel.listOfAyat
+                                .toString()
+                                .replaceAll('[', '')
+                                .replaceAll(']', ''),
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              fontFamily: 'KFGQPC',
+                              fontSize: 22.px,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   )
@@ -131,6 +130,46 @@ class SurahDetailsMusafPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      extendBody: true,
+      bottomNavigationBar: Container(
+        height: 120.px,
+        decoration: const BoxDecoration(
+          // color: Colors.red,
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/bottombar.png',
+            ),
+            fit: BoxFit.fill,
+          ),
+        ),
+        alignment: Alignment.bottomCenter,
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          unselectedItemColor: const Color(0xff788A95),
+          elevation: 0,
+          unselectedLabelStyle: TextStyle(
+            color: const Color(0xff788A95),
+            fontSize: 10.px,
+          ),
+          selectedLabelStyle: TextStyle(
+            color: QuranColors.greenCrayola,
+            fontSize: 10.px,
+          ),
+          items: [
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icTranslate), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icOpenBook), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icPLay), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icCategory), label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset(SvgPath.icPaste), label: ''),
+          ],
+        ),
       ),
     );
   }

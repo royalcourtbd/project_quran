@@ -47,9 +47,7 @@ class QuickAccessPage extends StatelessWidget {
                                 0;
                           },
                         ),
-                        SizedBox(
-                          width: 4.px,
-                        ),
+                        SizedBox(width: 4.px),
                         QuickAccessButton(
                           index: 1,
                           buttonText: 'Juz',
@@ -70,9 +68,7 @@ class QuickAccessPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 15.px,
-                  ),
+                  SizedBox(height: 15.px),
                   const QuickAccessPageSurahListWidget(),
                 ],
               ),
@@ -97,14 +93,13 @@ class AppBarWidget extends StatelessWidget {
       decoration: const BoxDecoration(),
       child: Row(
         children: [
-         
           Padding(
             padding: EdgeInsets.only(left: 12.px),
             child: CustomBackButton(
                 onTap: () {
                   Get.back();
                 },
-                svgPath: SvgPath.icArrowBack),    
+                svgPath: SvgPath.icArrowBack),
           ),
           Expanded(
             child: Container(
