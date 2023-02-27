@@ -21,13 +21,15 @@ class Initial extends StatelessWidget {
       ),
     );
 
-    return ResponsiveSizer(builder: (context, orientation, screenType) {
-      return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: _themeService.greenTheme(),
-        title: 'Quran',
-        home: const MainPage(),
-      );
-    });
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: _themeService.greenTheme(),
+          title: 'Quran',
+          home: const MainPage(),
+        );
+      },
+    );
   }
 }
