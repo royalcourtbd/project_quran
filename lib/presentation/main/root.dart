@@ -20,11 +20,12 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   TabButtonController tabButtonController = Get.put(TabButtonController());
   List pages = [
+    HomePage(),
     const SubjectWisePage(),
     QuickAccessPage(),
     const SearchPage(),
     QuickAccessPage(),
-    const SearchPage(),
+    
   ];
 
   @override
