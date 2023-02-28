@@ -475,6 +475,8 @@ class ThemeService extends GetxService {
           selectionColor: const Color(0xff3BB06E).withOpacity(0.5),
           selectionHandleColor: const Color(0xff3BB06E)),
       disabledColor: const Color(0xff7F909F),
+      
+      
       dividerColor: const Color(0xffDEDEDE),
       primaryColorLight: Colors.white,
       secondaryHeaderColor: const Color(0xff3BB06E),
@@ -499,21 +501,30 @@ class ThemeService extends GetxService {
           fontSize: 12.px,
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
+        titleMedium: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontFamily: GoogleFonts.roboto().fontFamily,
+          color: QuranColors.auroMetalSaurus,
+          fontSize: 12.px,
+        ),
         displayLarge: const TextStyle(color: Color(0xff64707A)),
         displayMedium: const TextStyle(color: Color(0xFF3B3B3B)),
       ),
       colorScheme: const ColorScheme(
-          background: Color(0xFFF3F3F3),
-          brightness: Brightness.light,
-          error: Color(0xFFB00020),
-          onBackground: Color(0xFF000000),
-          onError: Color(0xFFFFFFFF),
-          onPrimary: Color(0xFFFFFFFF),
-          onSecondary: Color(0xFF000000),
-          onSurface: Color(0xFF000000),
-          primary: Color(0xff3BB06E),
-          secondary: Color(0xFF0B9D4A),
-          surface: Color(0xFFFFFFFF)),
+        background: Color(0xFFF3F3F3),
+        brightness: Brightness.light,
+        error: Color(0xFFB00020),
+        onBackground: Color(0xFF000000),
+        onError: Color(0xFFFFFFFF),
+        onPrimary: Color(0xFFFFFFFF),
+        onSecondary: Color(0xFF000000),
+        onSurface: Color(0xFF000000),
+        primary: Color(0xff3BB06E),
+        secondary: Color(0xFF0B9D4A),
+        surface: Color(0xFFFFFFFF),
+
+        
+      ),
     );
   }
 

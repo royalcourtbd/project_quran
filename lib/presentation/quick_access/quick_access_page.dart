@@ -95,7 +95,7 @@ class AppBarWidget extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(left: 12.px),
-            child: CustomBackButton(
+            child: CustomButton(
                 onTap: () {
                   Get.back();
                 },

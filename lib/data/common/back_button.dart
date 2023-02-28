@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class CustomBackButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   String svgPath;
   VoidCallback onTap;
-  CustomBackButton({super.key, required this.svgPath, required this.onTap});
+  CustomButton({super.key, required this.svgPath, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

@@ -11,6 +11,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class SearchSection extends StatelessWidget {
   TabButtonController tabButtonController = Get.put(TabButtonController());
   OverlayEntry? overlayEntry;
+  String searchTitel;
 
   showFilterOverlay(BuildContext context) {
     OverlayState overlayState = Overlay.of(context);
@@ -144,6 +145,7 @@ class SearchSection extends StatelessWidget {
 
   SearchSection({
     super.key,
+    this.searchTitel = 'Search Sura Name, Sura No or Juz',
   });
 
   @override
@@ -170,7 +172,7 @@ class SearchSection extends StatelessWidget {
                 ),
                 SizedBox(width: 10.px),
                 Text(
-                  'Search Sura Name, Sura No or Juz',
+                  searchTitel,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         fontFamily: GoogleFonts.roboto().fontFamily,
                         fontWeight: FontWeight.w400,

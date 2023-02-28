@@ -38,7 +38,7 @@ class SurahListWidget extends StatelessWidget {
                 color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(10.px),
                 border: Border.all(
-                  color: const Color(0xff537967).withOpacity(0.08.px),
+                  color: const Color(0xff537967).withOpacity(0.12.px),
                 ),
               ),
               child: Row(

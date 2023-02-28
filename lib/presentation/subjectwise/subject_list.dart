@@ -1,0 +1,95 @@
+import 'package:project_quran/data/model/subjectwise_ayat_model.dart';
+
+List<SubjectwiseAtatModel> subjectList = [
+  SubjectwiseAtatModel(
+    subjectName: 'A\'la',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 2,
+  ),
+  SubjectwiseAtatModel(
+    subjectName: 'Aad',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 54,
+  ),
+  SubjectwiseAtatModel(
+    subjectName: 'Aaron',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 2,
+  ),
+  SubjectwiseAtatModel(
+    subjectName: 'Abasa',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 28,
+  ),
+  SubjectwiseAtatModel(
+    subjectName: 'Abasa',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ  ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 28,
+  ),
+  SubjectwiseAtatModel(
+    subjectName: 'Abasa',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 28,
+  ),
+  SubjectwiseAtatModel(
+    subjectName: 'Abasement',
+    ayatNumber: 1,
+    ayat: [
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+      'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',
+    ],
+    meaningOfAyat: '[All] praise is [due] to Allah, Lord of the worlds',
+    nameOftranslation: 'English - Sahih International',
+    suraName: 'Al Fatiha',
+    suraNumber: 1,
+    totalAyat: 15,
+  ),
+];

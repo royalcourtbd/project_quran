@@ -4,19 +4,17 @@ import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/data/common/back_button.dart';
 import 'package:project_quran/data/common/simple_app_bar.dart';
-import 'package:project_quran/data/model/surah_model.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
-import 'package:project_quran/presentation/surah_details/widgets/surah_name_section.dart';
+import 'package:project_quran/presentation/word_by_word/sura_list.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SurahDetailsPage extends StatelessWidget {
-  SurahModel surahModel;
-
-  SurahDetailsPage({super.key, required this.surahModel});
+class WordByWordPage extends StatelessWidget {
+  const WordByWordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        body: Scaffold(
       backgroundColor: const Color(0xffF1F4F8),
       body: Column(
         children: [
@@ -25,7 +23,7 @@ class SurahDetailsPage extends StatelessWidget {
             height: MediaQuery.of(context).padding.top,
           ),
           SimpleAppBar(
-            appBarTitle: surahModel.surahNameEn,
+            appBarTitle: 'surahModel.surahNameEn',
             leading: CustomButton(
               onTap: () => Get.back(),
               svgPath: SvgPath.icArrowForword,
@@ -41,7 +39,91 @@ class SurahDetailsPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  SurahNameSection(surahModel: surahModel),
+                  // SizedBox(height: 10.px),
+
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.px),
+                    child: Container(
+                      height: 115.px,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.circular(10.px),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 15.px, vertical: 15.px),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      SvgPath.icShowIndex,
+                                    ),
+                                    Text(
+                                      wordByWordSuraList[0].surahNo.toString(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                            color: const Color(0xff17B686),
+                                            fontSize: 14.px,
+                                          ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15.px),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      wordByWordSuraList[0].surahNameEn,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                            fontSize: 18.px,
+                                          ),
+                                    ),
+                                    Text(
+                                      '${wordByWordSuraList[0].nameTranslation} \n${wordByWordSuraList[0].ayah} Verse \nNazil: ${wordByWordSuraList[0].revelationType}',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium!
+                                          .copyWith(
+                                            height: 1.6.px,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(10.px),
+                            ),
+                            child: SvgPicture.asset(
+                              wordByWordSuraList[0].revelationType == 'Maccan'
+                                  ? SvgPath.icMakkaBig
+                                  : SvgPath.icMakkaBig,
+                              colorFilter: ColorFilter.mode(
+                                Colors.grey.shade500,
+                                BlendMode.srcATop,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 15.px),
                   Stack(
                     alignment: Alignment.center,
@@ -60,10 +142,10 @@ class SurahDetailsPage extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: QuranColors.whiteColor,
                             ),
-                      )
+                      ),
                     ],
                   ),
-                  SizedBox(height: 5.px),
+                  SizedBox(height: 10.px),
                   _singleAyatView(),
                 ],
               ),
@@ -111,13 +193,13 @@ class SurahDetailsPage extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 
   ListView _singleAyatView() {
     return ListView.builder(
       padding: EdgeInsets.zero,
-      itemCount: surahModel.listOfAyat.length,
+      itemCount: 5,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
@@ -167,23 +249,36 @@ class SurahDetailsPage extends StatelessWidget {
                 SizedBox(height: 20.px),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    surahModel.listOfAyat[index].toString(),
-                    style: TextStyle(
-                      fontFamily: 'KFGQPC',
-                      fontSize: 22.px,
-                      fontWeight: FontWeight.w400,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        wordByWordSuraList[0]
+                            .listOfAyat
+                            .toString()
+                            .replaceAll('[', '')
+                            .replaceAll(']', ''),
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontFamily: 'KFGQPC',
+                              fontSize: 22.px,
+                              fontWeight: FontWeight.w400,
+                            ),
+                      ),
+                      Text(
+                        wordByWordSuraList[0].listOfTranslation.toString(),
+                        style: const TextStyle(),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 40.px),
                 Text(
-                  surahModel.nameOftranslation,
+                  ' surahModel.nameOftranslation',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
                 ),
                 SizedBox(height: 10.px),
                 Text(
-                  surahModel.listOfTranslation[index],
+                  ' surahModel.listOfTranslation[index]',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: const Color(0xff6F767D),
                       fontWeight: FontWeight.w400),
@@ -196,4 +291,3 @@ class SurahDetailsPage extends StatelessWidget {
     );
   }
 }
-

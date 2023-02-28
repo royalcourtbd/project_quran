@@ -29,4 +29,14 @@ class SvgPath {
   static const String icTranslate = 'assets/images/translate.svg';
   static const String icDownArrow = 'assets/images/down_arrow.svg';
   static const String icBottombar = 'assets/images/bottombar.png';
+  static const String icLogout = 'assets/images/logout.svg';
+  static const String icRedFolder = 'assets/images/folder_red_icon.svg';
+  static const String icGreenFolder = 'assets/images/folder_green_icon.svg';
+  static const String icYellowFolder = 'assets/images/folder_yellow_icon.svg';
+  static const String icPurpleFolder = 'assets/images/folder_purple_icon .svg';
+  static const String icVirtical = 'assets/images/ic_virtical.svg';
+  static const String icDocument = 'assets/images/document.svg';
+  static const String icDoubleCheck = 'assets/images/double_check.svg';
+  static const String icFlag = 'assets/images/flag.svg';
+  static const String icEmail = 'assets/images/envelope.svg';
 }

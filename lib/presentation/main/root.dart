@@ -3,8 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
+import 'package:project_quran/presentation/bookmark/bookmark_page.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/home/home_page.dart';
+import 'package:project_quran/presentation/memorise/memorise_page.dart';
 import 'package:project_quran/presentation/quick_access/quick_access_page.dart';
 import 'package:project_quran/presentation/search/search_page.dart';
 import 'package:project_quran/presentation/subjectwise/subjectwise_page.dart';
@@ -20,12 +22,15 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   TabButtonController tabButtonController = Get.put(TabButtonController());
   List pages = [
+    //const WordByWordPage(),
     HomePage(),
+    // const PrivacyPolicy(),
+    //const ContactUsPage(),
     const SubjectWisePage(),
+    const BookmarkPage(),
+    const MemorisePage(),
     QuickAccessPage(),
     const SearchPage(),
-    QuickAccessPage(),
-    
   ];
 
   @override

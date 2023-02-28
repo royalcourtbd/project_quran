@@ -16,6 +16,9 @@ class QuranColors {
   // AuroMetalSaurus
   static const Color auroMetalSaurus = Color(0xff6F767D);
 
+  // Hooker's Green
+  static const Color hookersGreen = Color(0xff537967);
+
   /////
 
   // Charcoal

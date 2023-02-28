@@ -32,7 +32,7 @@ class SurahDetailsMusafPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomBackButton(
+                CustomButton(
                   onTap: () => Get.back(),
                   svgPath: SvgPath.icArrowForword,
                 ),
@@ -42,7 +42,7 @@ class SurahDetailsMusafPage extends StatelessWidget {
                         fontSize: 18.px,
                       ),
                 ),
-                CustomBackButton(
+                CustomButton(
                   onTap: () {},
                   svgPath: SvgPath.icSetting,
                 ),
