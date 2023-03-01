@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/presentation/settings/settings_card_header.dart';
 import 'package:project_quran/presentation/settings/settings_container.dart';
@@ -8,7 +9,8 @@ import 'package:project_quran/presentation/settings/settings_toggle_option.dart'
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ContentSettingsCard extends StatelessWidget {
-  const ContentSettingsCard({Key? key}) : super(key: key);
+  TabButtonController tabButtonController = Get.put(TabButtonController());
+  ContentSettingsCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +47,13 @@ class ContentSettingsCard extends StatelessWidget {
                   onToggle: (bool toggled) {},
                   toggled: true,
                 )
-              : SettingsToggleOption(
-                  title: "Show Translation",
-                  onToggle: (bool toggled) {},
-                  toggled: true,
-                ),
+              : Obx(() => SettingsToggleOption(
+                    title: "Show Translation",
+                    onToggle: (bool toggled) {
+                      tabButtonController.toggle();
+                    },
+                    toggled: tabButtonController.on.value,
+                  )),
         ],
       ),
     );

@@ -44,7 +44,7 @@ class MiniSettingsDrawer extends StatelessWidget {
                 child: Column(
                   children: [
                     FontSettingsCard(),
-                    const ContentSettingsCard(),
+                     ContentSettingsCard(),
                     const TajweedSettingsCard(),
                     const AppearanceSettingsCard(),
                   ],

@@ -25,7 +25,7 @@ class SettingsPage extends StatelessWidget {
           children: [
             SizedBox(height: 6.px),
             const AppearanceSettingsCard(),
-            const ContentSettingsCard(),
+             ContentSettingsCard(),
              FontSettingsCard(),
              NotificationSettingsCard(),
           ],

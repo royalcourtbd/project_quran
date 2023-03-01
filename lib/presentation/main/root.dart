@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
-import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/presentation/bookmark/bookmark_page.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/contact_us/contact_us_page.dart';
@@ -14,7 +13,6 @@ import 'package:project_quran/presentation/search/search_page.dart';
 import 'package:project_quran/presentation/subjectwise/subjectwise_page.dart';
 import 'package:project_quran/presentation/support_us/support_us_page.dart';
 import 'package:project_quran/presentation/thanks_and_credit/thanks_and_credit_page.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -109,7 +107,7 @@ class _MainPageState extends State<MainPage> {
           //         )),
           //   ),
           // ),
-        )
+        ),
       ],
     );
   }
