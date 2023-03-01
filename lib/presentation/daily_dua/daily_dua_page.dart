@@ -5,33 +5,37 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/data/common/back_button.dart';
 import 'package:project_quran/data/common/simple_app_bar.dart';
-import 'package:project_quran/data/model/memories_model.dart';
-import 'package:project_quran/presentation/config/quran_colors.dart';
+import 'package:project_quran/presentation/memorise/memories_list.dart';
+import 'package:project_quran/presentation/settings/mini_settings/mini_settings_drawer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class MemoriseSurahDetailsPage extends StatelessWidget {
-  MemoriesModel memoriesModel;
-  int index;
-  MemoriseSurahDetailsPage(
-      {super.key, required this.memoriesModel, required this.index});
+class DailyDuaPage extends StatelessWidget {
+  const DailyDuaPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF1F4F8),
+      endDrawer: const MiniSettingsDrawer(),
       body: Column(
         children: [
           SimpleAppBar(
-            appBarTitle:
-                '${memoriesModel.nameOfPlan} : ${memoriesModel.totalSurah[index]}',
+            appBarTitle: 'Daily Dua',
             leading: CustomButton(
               svgPath: SvgPath.icArrowForword,
               onTap: () => Get.back(),
             ),
-            trailing: CustomButton(
-              svgPath: SvgPath.icSetting,
-              onTap: () {},
-            ),
+            trailing: Builder(builder: (context) {
+              return CustomButton(
+                svgPath: SvgPath.icSetting,
+                onTap: () {
+                  print('drawer');
+                  Scaffold.of(context).openEndDrawer();
+                },
+              );
+            }),
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -41,7 +45,7 @@ class MemoriseSurahDetailsPage extends StatelessWidget {
                   SizedBox(height: 15.px),
                   ListView.builder(
                     padding: EdgeInsets.zero,
-                    itemCount: memoriesModel.ayat.length,
+                    itemCount: memoriesList.first.ayat.length,
                     shrinkWrap: true,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, index) {
@@ -63,41 +67,43 @@ class MemoriseSurahDetailsPage extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    '2',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                          fontFamily:
-                                              GoogleFonts.roboto().fontFamily,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                  ),
                                   Row(
                                     children: [
-                                      SvgPicture.asset(
-                                        SvgPath.icFlag,
-                                    
+                                      Text(
+                                        memoriesList.first.totalSurah.first,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              fontFamily: GoogleFonts.roboto()
+                                                  .fontFamily,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700,
+                                            ),
                                       ),
-                                      SizedBox(width: 24.px),
-                                      SvgPicture.asset(
-                                        SvgPath.icDoubleCheck,
-                                        colorFilter: const ColorFilter.mode(
-                                          QuranColors.outerSpace,
-                                          BlendMode.srcATop,
-                                        ),
+                                      const SizedBox(width: 5),
+                                      Text(
+                                        '1 : 1',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              fontFamily: GoogleFonts.roboto()
+                                                  .fontFamily,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700,
+                                            ),
                                       ),
                                     ],
                                   ),
+                                  SvgPicture.asset(SvgPath.icMoreHorizontal)
                                 ],
                               ),
                               SizedBox(height: 20.px),
                               Align(
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  memoriesModel.ayat[index],
+                                  memoriesList.first.ayat.toString(),
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     fontFamily: 'KFGQPC',
@@ -108,42 +114,32 @@ class MemoriseSurahDetailsPage extends StatelessWidget {
                               ),
                               SizedBox(height: 40.px),
                               Text(
-                                memoriesModel.nameOftranslation,
+                                memoriesList.first.nameOftranslation,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
                                     .copyWith(),
                               ),
                               SizedBox(height: 10.px),
-                              MemoriesPageTextDecoration(
-                                  title: memoriesModel.meaningOfAyat),
+                              Text(
+                                memoriesList.first.meaningOfAyat,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(),
+                              ),
                             ],
                           ),
                         ),
                       );
                     },
                   ),
+                 
                 ],
               ),
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class MemoriesPageTextDecoration extends StatelessWidget {
-  final String title;
-  const MemoriesPageTextDecoration({super.key, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 4.px),
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.titleMedium!.copyWith(),
       ),
     );
   }

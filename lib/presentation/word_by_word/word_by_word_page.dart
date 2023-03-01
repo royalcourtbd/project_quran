@@ -39,8 +39,6 @@ class WordByWordPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  // SizedBox(height: 10.px),
-
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.px),
                     child: Container(

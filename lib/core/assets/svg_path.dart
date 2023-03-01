@@ -39,4 +39,14 @@ class SvgPath {
   static const String icDoubleCheck = 'assets/images/double_check.svg';
   static const String icFlag = 'assets/images/flag.svg';
   static const String icEmail = 'assets/images/envelope.svg';
+  static const String icAlHadith = 'assets/images/al_hadith.svg';
+  static const String icDuaAndRuqyah = 'assets/images/dua_and_ruqyah.svg';
+  static const String icQuranMazid = 'assets/images/quran_majid.svg';
+  static const String icThanks = 'assets/images/thanks.svg';
+  static const String icPlusSign = 'assets/images/plus_sign.svg';
+  static const String icT = 'assets/images/comment-alt.svg';
+  static const String icContent = 'assets/images/content.svg';
+  static const String icColor = 'assets/images/color.svg';
+  static const String icMoon = 'assets/images/moon.svg';
+  static const String icSun = 'assets/images/sun.svg';
 }

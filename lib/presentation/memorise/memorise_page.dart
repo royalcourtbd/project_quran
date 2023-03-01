@@ -12,30 +12,39 @@ class MemorisePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          CustomAppBar(
-            appBarTitle: 'Memorization',
-            trailing: SvgPicture.asset(SvgPath.icLogout),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  SizedBox(height: 15.px),
-                  SearchSection(
-                    searchTitel: 'Search Bookmark, Ayat pins, Notes',
-                  ),
-                  SizedBox(height: 10.px),
-                  const SinglePlanWidget(),
-                  SizedBox(height: QuranScreen.width() * .3),
-                ],
+    return Container(
+      margin: EdgeInsets.only(bottom: 89.px),
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          elevation: 0,
+          backgroundColor: Theme.of(context).primaryColor,
+          child: SvgPicture.asset(SvgPath.icPlusSign),
+          onPressed: () {},
+        ),
+        body: Column(
+          children: [
+            CustomAppBar(
+              appBarTitle: 'Memorization',
+              trailing: SvgPicture.asset(SvgPath.icLogout),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    SizedBox(height: 15.px),
+                    SearchSection(
+                      searchTitel: 'Search Bookmark, Ayat pins, Notes',
+                    ),
+                    SizedBox(height: 10.px),
+                    const SinglePlanWidget(),
+                    SizedBox(height: QuranScreen.width() * .3),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

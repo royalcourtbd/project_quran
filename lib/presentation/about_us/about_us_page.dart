@@ -24,6 +24,7 @@ class AboutUsPage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: 15.px, vertical: 10.px),

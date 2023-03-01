@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^2.0.1
   responsive_sizer: ^3.1.1
   custom_navigation_bar: ^0.8.2
+  dropdown_button2: ^2.0.0
 
 dev_dependencies:
   flutter_test:

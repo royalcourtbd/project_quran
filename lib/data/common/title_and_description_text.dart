@@ -23,9 +23,7 @@ class DescriptionText extends StatelessWidget {
                 fontSize: fontSize.px,
               ),
         ),
-        SizedBox(
-          height: 20.px,
-        ),
+        SizedBox(height: 20.px),
       ],
     );
   }
