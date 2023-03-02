@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/home/list/all_surah_list.dart';
-import 'package:project_quran/presentation/surah_details/surah_details_page.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SurahListWidget extends StatelessWidget {
-  const SurahListWidget({
+class QuickAccseeSurahListWidget extends StatelessWidget {
+  const QuickAccseeSurahListWidget({
     super.key,
   });
 
@@ -22,15 +20,9 @@ class SurahListWidget extends StatelessWidget {
       itemCount: allSurahList.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.px, vertical: 5.px),
+          padding: EdgeInsets.only(left: 9.px, right: 9.px, bottom: 10.px),
           child: GestureDetector(
-            onTap: () {
-              Get.to(
-                () => SurahDetailsPage(
-                  surahModel: allSurahList[index],
-                ),
-              );
-            },
+            onTap: () {},
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 15.px, horizontal: 13.px),
               decoration: BoxDecoration(
@@ -105,14 +97,6 @@ class SurahListWidget extends StatelessWidget {
                         ],
                       ),
                     ],
-                  ),
-                  Text(
-                    allSurahList[index].surahNameAr,
-                    style: TextStyle(
-                      fontFamily: 'SurahName',
-                      fontSize: 20.px,
-                      fontWeight: FontWeight.w400,
-                    ),
                   ),
                 ],
               ),

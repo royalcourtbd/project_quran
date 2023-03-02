@@ -6,8 +6,8 @@ import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/home/list/all_surah_list.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class QuickAccessPageSurahListWidget extends StatelessWidget {
-  const QuickAccessPageSurahListWidget({
+class QuickAccessSettingJuzListWidget extends StatelessWidget {
+  const QuickAccessSettingJuzListWidget({
     super.key,
   });
 

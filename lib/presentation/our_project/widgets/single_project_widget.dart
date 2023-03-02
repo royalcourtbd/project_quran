@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project_quran/data/common/title_and_description_text.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/our_project/project_list.dart';
 import 'package:project_quran/presentation/our_project/widgets/download_button.dart';
+import 'package:project_quran/presentation/widgets/title_and_description_text.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SingleProjectWidget extends StatelessWidget {

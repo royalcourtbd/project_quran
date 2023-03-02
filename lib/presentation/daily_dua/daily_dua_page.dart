@@ -3,10 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+
 import 'package:project_quran/presentation/memorise/memories_list.dart';
 import 'package:project_quran/presentation/settings/mini_settings/mini_settings_drawer.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DailyDuaPage extends StatelessWidget {
@@ -27,15 +28,16 @@ class DailyDuaPage extends StatelessWidget {
               svgPath: SvgPath.icArrowForword,
               onTap: () => Get.back(),
             ),
-            trailing: Builder(builder: (context) {
-              return CustomButton(
-                svgPath: SvgPath.icSetting,
-                onTap: () {
-                  print('drawer');
-                  Scaffold.of(context).openEndDrawer();
-                },
-              );
-            }),
+            trailing: Builder(
+              builder: (context) {
+                return CustomButton(
+                  svgPath: SvgPath.icSetting,
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                );
+              },
+            ),
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -134,7 +136,6 @@ class DailyDuaPage extends StatelessWidget {
                       );
                     },
                   ),
-                 
                 ],
               ),
             ),

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+
 import 'package:project_quran/data/model/memories_model.dart';
 import 'package:project_quran/presentation/home/list/all_surah_list.dart';
 import 'package:project_quran/presentation/memorise/memorise_sura_details_page.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MemoriseDetailsPage extends StatelessWidget {

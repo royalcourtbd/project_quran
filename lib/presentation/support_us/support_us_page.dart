@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
-import 'package:project_quran/data/common/text_with_header.dart';
-import 'package:project_quran/data/common/title_and_description_text.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/support_us/widgets/support_button_widget.dart';
+import 'package:project_quran/presentation/widgets/text_with_header.dart';
+import 'package:project_quran/presentation/widgets/title_and_description_text.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SupportUsPage extends StatelessWidget {

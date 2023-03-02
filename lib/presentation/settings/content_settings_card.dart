@@ -28,31 +28,39 @@ class ContentSettingsCard extends StatelessWidget {
                 ),
           SizedBox(height: 20.px),
           Get.currentRoute == '/SettingsPage'
-              ? SettingsToggleOption(
-                  title: "Show Chapter",
-                  onToggle: (bool toggled) {},
-                  toggled: false,
-                )
+              ? Obx(() => SettingsToggleOption(
+                    title: "Show Chapter",
+                    onToggle: (bool toggled) {
+                      tabButtonController.toggleChapter();
+                    },
+                    toggled: tabButtonController.chapterOn.value,
+                  ))
               : const SizedBox.shrink(),
-          SizedBox(height: 20.px),
-          SettingsToggleOption(
-            title: "Show Arabic",
-            onToggle: (bool toggled) {},
-            toggled: false,
-          ),
+          Get.currentRoute == '/SettingsPage'
+              ? SizedBox(height: 20.px)
+              : const SizedBox.shrink(),
+          Obx(() => SettingsToggleOption(
+                title: "Show Arabic",
+                onToggle: (bool toggled) {
+                  tabButtonController.toggleArabic();
+                },
+                toggled: tabButtonController.arabicOn.value,
+              )),
           SizedBox(height: 20.px),
           Get.currentRoute == '/SettingsPage'
-              ? SettingsToggleOption(
-                  title: "Hadith Action Button",
-                  onToggle: (bool toggled) {},
-                  toggled: true,
-                )
+              ? Obx(() => SettingsToggleOption(
+                    title: "Hadith Action Button",
+                    onToggle: (bool toggled) {
+                      tabButtonController.toggleOtherInfo();
+                    },
+                    toggled: tabButtonController.otherInfoOn.value,
+                  ))
               : Obx(() => SettingsToggleOption(
                     title: "Show Translation",
                     onToggle: (bool toggled) {
-                      tabButtonController.toggle();
+                      tabButtonController.toggleTranslation();
                     },
-                    toggled: tabButtonController.on.value,
+                    toggled: tabButtonController.translationOn.value,
                   )),
         ],
       ),

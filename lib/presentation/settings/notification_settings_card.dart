@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/presentation/settings/settings_drop_down_option.dart';
 import 'package:project_quran/presentation/settings/settings_toggle_option.dart';
 
@@ -8,13 +10,14 @@ import 'package:project_quran/presentation/settings/settings_card_header.dart';
 import 'package:project_quran/presentation/settings/settings_container.dart';
 
 class NotificationSettingsCard extends StatelessWidget {
+    TabButtonController tabButtonController = Get.put(TabButtonController());
   final List<String> value = [
     'Item1',
     'Item2',
     'Item3',
     'Item4',
   ];
-   NotificationSettingsCard({
+  NotificationSettingsCard({
     super.key,
   });
 
@@ -28,17 +31,19 @@ class NotificationSettingsCard extends StatelessWidget {
             svgPath: SvgPath.icContent,
           ),
           SizedBox(height: 25.px),
-          SettingsToggleOption(
-            title: "Daily Notification Update",
-            onToggle: (bool toggled) {},
-            toggled: true,
-          ),
+          Obx(() => SettingsToggleOption(
+                title: "Daily Notification Update",
+                onToggle: (bool toggled) {
+
+                  tabButtonController.toggleNotification();
+
+                },
+                toggled: tabButtonController.showNotificaionOn.value,
+              )),
           SizedBox(height: 20.px),
           SettingsDropDownOption(
             title: "Time of Notifications",
             value: value,
-
-            
           ),
         ],
       ),

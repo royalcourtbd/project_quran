@@ -6,11 +6,13 @@ class SimpleAppBar extends StatelessWidget {
   String? appBarTitle;
   Widget? leading;
   Widget? trailing;
+  Widget? action;
   SimpleAppBar({
     super.key,
     this.appBarTitle,
     this.leading,
     this.trailing,
+    this.action,
   });
 
   @override
@@ -38,7 +40,15 @@ class SimpleAppBar extends StatelessWidget {
                       fontSize: 18.px,
                     ),
               ),
-              trailing != null ? trailing! : const SizedBox.shrink(),
+              Row(
+                children: [
+                  action != null ? action! : const SizedBox.shrink(),
+                  SizedBox(
+                    width: 20.px,
+                  ),
+                  trailing != null ? trailing! : const SizedBox.shrink(),
+                ],
+              )
             ],
           ),
         ),

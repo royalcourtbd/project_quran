@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:project_quran/presentation/our_project/project_list.dart';
 import 'package:project_quran/presentation/our_project/widgets/single_project_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

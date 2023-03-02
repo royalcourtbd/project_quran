@@ -3,10 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+
 import 'package:project_quran/data/model/memories_model.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
+import 'package:project_quran/presentation/settings/mini_settings/mini_settings_drawer.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MemoriseSurahDetailsPage extends StatelessWidget {
@@ -19,6 +21,7 @@ class MemoriseSurahDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF1F4F8),
+      endDrawer: const MiniSettingsDrawer(),
       body: Column(
         children: [
           SimpleAppBar(
@@ -28,9 +31,15 @@ class MemoriseSurahDetailsPage extends StatelessWidget {
               svgPath: SvgPath.icArrowForword,
               onTap: () => Get.back(),
             ),
-            trailing: CustomButton(
-              svgPath: SvgPath.icSetting,
-              onTap: () {},
+            trailing: Builder(
+              builder: (context) {
+                return CustomButton(
+                  svgPath: SvgPath.icSetting,
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                );
+              },
             ),
           ),
           Expanded(
@@ -79,7 +88,6 @@ class MemoriseSurahDetailsPage extends StatelessWidget {
                                     children: [
                                       SvgPicture.asset(
                                         SvgPath.icFlag,
-                                    
                                       ),
                                       SizedBox(width: 24.px),
                                       SvgPicture.asset(

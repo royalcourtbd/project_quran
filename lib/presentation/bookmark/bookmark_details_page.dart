@@ -3,10 +3,11 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/subjectwise/subject_list.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BookmarkDetailsPage extends StatelessWidget {

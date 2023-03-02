@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/settings/appearance_settings_card.dart';
 import 'package:project_quran/presentation/settings/content_settings_card.dart';
 import 'package:project_quran/presentation/settings/font_settings_card.dart';
+import 'package:project_quran/presentation/settings/genaral_settings_card.dart';
+import 'package:project_quran/presentation/settings/language_settings_card.dart';
 import 'package:project_quran/presentation/settings/notification_settings_card.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -15,21 +17,18 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = Theme.of(context);
-
-    return Scaffold(
-      backgroundColor: const Color(0xffF1F4F8),
-      appBar: _buildSettingsAppBar(themeData),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 6.px),
-            const AppearanceSettingsCard(),
-             ContentSettingsCard(),
-             FontSettingsCard(),
-             NotificationSettingsCard(),
-          ],
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: 6.px),
+          LanguageSettingsCard(),
+          GeneralSettingsCard(),
+          AppearanceSettingsCard(),
+          ContentSettingsCard(),
+          FontSettingsCard(),
+          NotificationSettingsCard(),
+          SizedBox(height: 70.px),
+        ],
       ),
     );
   }

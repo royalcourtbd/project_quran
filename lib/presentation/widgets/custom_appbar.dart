@@ -7,9 +7,11 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class CustomAppBar extends StatelessWidget {
   String appBarTitle;
   final Widget? trailing;
+  VoidCallback? openDrawer;
   CustomAppBar({
     super.key,
     required this.appBarTitle,
+    this.openDrawer,
     this.trailing,
   });
 
@@ -33,7 +35,10 @@ class CustomAppBar extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset(SvgPath.icMenu),
+                      GestureDetector(
+                        onTap: openDrawer,
+                        child: SvgPicture.asset(SvgPath.icMenu),
+                      ),
                       SizedBox(width: 16.px),
                       Text(
                         appBarTitle,

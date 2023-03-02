@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
-import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/custom_appbar.dart';
+
 import 'package:project_quran/presentation/bookmark/widgets/single_bookmark_widget.dart';
 import 'package:project_quran/presentation/bookmark/widgets/tab_button.dart';
 import 'package:project_quran/presentation/home/widgets/search_section.dart';
@@ -14,30 +12,21 @@ class BookmarkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          CustomAppBar(
-            appBarTitle: 'Collection',
-            trailing: SvgPicture.asset(SvgPath.icLogout),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  SizedBox(height: 15.px),
-                  SearchSection(
-                    searchTitel: 'Search Bookmark, Ayat pins, Notes',
-                  ),
-                  SizedBox(height: 10.px),
-                  BookmarkPageTabbutton(),
-                  const SingleBookmarkItemWidget(),
-                ],
-              ),
+    return SizedBox(
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            SizedBox(height: 15.px),
+            SearchSection(
+              searchTitel: 'Search Bookmark, Ayat pins, Notes',
             ),
-          ),
-        ],
+            SizedBox(height: 10.px),
+            BookmarkPageTabbutton(),
+            const SingleBookmarkItemWidget(),
+            SizedBox(height: 70.px),
+          ],
+        ),
       ),
     );
   }

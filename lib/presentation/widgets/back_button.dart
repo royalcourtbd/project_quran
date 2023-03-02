@@ -5,7 +5,13 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class CustomButton extends StatelessWidget {
   String svgPath;
   VoidCallback onTap;
-  CustomButton({super.key, required this.svgPath, required this.onTap});
+  Color bgColor;
+  CustomButton({
+    super.key,
+    required this.svgPath,
+    required this.onTap,
+    this.bgColor = const Color(0xffD6E5E1),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,7 @@ class CustomButton extends StatelessWidget {
         width: 40.px,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: const Color(0xffD6E5E1).withOpacity(0.25.px),
+          color: bgColor.withOpacity(0.25.px),
           borderRadius: BorderRadius.circular(10.px),
         ),
         child: SvgPicture.asset(svgPath),

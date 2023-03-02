@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/custom_appbar.dart';
+import 'package:project_quran/core/util/util.dart';
 import 'package:project_quran/presentation/home/widgets/dashboard_item.dart';
 import 'package:project_quran/presentation/home/widgets/quick_access_surah_section.dart';
 import 'package:project_quran/presentation/home/widgets/search_section.dart';
 import 'package:project_quran/presentation/home/widgets/surah_list_widget.dart';
 import 'package:project_quran/presentation/home/widgets/tab_button.dart';
-import 'package:project_quran/presentation/quick_access/quick_access_page.dart';
+import 'package:project_quran/presentation/nurani_quran/nurani_quran_page.dart';
+import 'package:project_quran/presentation/quick_access/quick_access_setting.dart';
 import 'package:project_quran/presentation/search/search_page.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -16,14 +17,14 @@ class HomePage extends StatelessWidget {
   TabButtonController tabButtonController = Get.put(TabButtonController());
   HomePage({super.key});
 
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return SizedBox(
+      height: QuranScreen.height(),
+      child: Column(
         children: [
-          CustomAppBar(
-            appBarTitle: 'Quran Majeed',
-          ),
           Expanded(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
@@ -38,7 +39,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         DashboardItem(
-                          onTap: () => Get.to(() => QuickAccessPage()),
+                          onTap: () => Get.to(() => const NuraniQuranPage()),
                           iconPath: SvgPath.icClock,
                           title: 'Last Read',
                           bgColor: const Color(0xffF4F8FF),
@@ -114,6 +115,9 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: 11.px),
                   const SurahListWidget(),
+                  SizedBox(
+                    height: 200.px,
+                  ),
                 ],
               ),
             ),

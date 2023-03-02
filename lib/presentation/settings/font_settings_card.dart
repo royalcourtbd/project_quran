@@ -59,7 +59,9 @@ class FontSettingsCard extends StatelessWidget {
             title: "Arabic Font",
             value: _arabicFonts,
           ),
-          SizedBox(height: 16.px),
+          Get.currentRoute == '/SettingsPage'
+              ? const SizedBox.shrink()
+              : SizedBox(height: 16.px),
           Get.currentRoute == '/SettingsPage'
               ? const SizedBox.shrink()
               : SettingsDropDownOption(

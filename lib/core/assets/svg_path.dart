@@ -49,4 +49,18 @@ class SvgPath {
   static const String icColor = 'assets/images/color.svg';
   static const String icMoon = 'assets/images/moon.svg';
   static const String icSun = 'assets/images/sun.svg';
+  static const String icLogo = 'assets/images/logo.png';
+  static const String icAbout = 'assets/images/aboute.svg';
+  static const String icCategory1 = 'assets/images/category-1.svg';
+  static const String icDonate = 'assets/images/donate.svg';
+  static const String icFavorite2 = 'assets/images/favorite.svg';
+  static const String icMessage = 'assets/images/message.svg';
+  static const String icNotification = 'assets/images/notification_1.svg';
+  static const String icQuran = 'assets/images/quran.svg';
+  static const String icSetting2 = 'assets/images/setting_2.svg';
+  static const String icShare1 = 'assets/images/share-1.svg';
+  static const String icShare2 = 'assets/images/share-2.svg';
+  static const String icMenu2 = 'assets/images/menu.svg';
+  static const String icBookmark2 = 'assets/images/bookmark2.svg';
+  static const String icQuranPage = 'assets/images/quran_page.png';
 }

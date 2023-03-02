@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/bottom_menu_item.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:project_quran/data/model/surah_model.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
+import 'package:project_quran/presentation/settings/mini_settings/mini_settings_drawer.dart';
+
+
 import 'package:project_quran/presentation/surah_details/widgets/surah_name_section.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -18,99 +22,119 @@ class SurahDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF1F4F8),
-      body: Column(
+      endDrawer: const MiniSettingsDrawer(),
+      body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(color: QuranColors.whiteColor),
-            height: MediaQuery.of(context).padding.top,
-          ),
-          SimpleAppBar(
-            appBarTitle: surahModel.surahNameEn,
-            leading: CustomButton(
-              onTap: () => Get.back(),
-              svgPath: SvgPath.icArrowForword,
-            ),
-            trailing: CustomButton(
-              onTap: () => Get.back(),
-              svgPath: SvgPath.icSetting,
-            ),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.only(top: 10.px),
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  SurahNameSection(surahModel: surahModel),
-                  SizedBox(height: 15.px),
-                  Stack(
-                    alignment: Alignment.center,
+          Column(
+            children: [
+              SimpleAppBar(
+                appBarTitle: surahModel.surahNameEn,
+                leading: CustomButton(
+                  onTap: () => Get.back(),
+                  svgPath: SvgPath.icArrowForword,
+                ),
+                trailing: Builder(
+                  builder: (context) {
+                    return CustomButton(
+                      svgPath: SvgPath.icSetting,
+                      onTap: () {
+                        Scaffold.of(context).openEndDrawer();
+                      },
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.only(top: 10.px),
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
                     children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 15.px),
-                        width: double.maxFinite,
-                        height: 50.px,
-                        child: SvgPicture.asset(
-                          SvgPath.icPageNo,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      Text(
-                        'Page : 01',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              color: QuranColors.whiteColor,
+                      SurahNameSection(surahModel: surahModel),
+                      SizedBox(height: 15.px),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 15.px),
+                            width: double.maxFinite,
+                            height: 50.px,
+                            child: SvgPicture.asset(
+                              SvgPath.icPageNo,
+                              fit: BoxFit.fill,
                             ),
-                      )
+                          ),
+                          Text(
+                            'Page : 01',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: QuranColors.whiteColor,
+                                ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 5.px),
+                      _singleAyatView(),
+                      SizedBox(height: 65.px),
                     ],
                   ),
-                  SizedBox(height: 5.px),
-                  _singleAyatView(),
-                ],
+                ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 120.px,
+              decoration: const BoxDecoration(
+                //color: Colors.red,
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/bottombar.png',
+                  ),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                padding: EdgeInsets.all(5.px),
+                alignment: Alignment.center,
+                height: 56.px,
+                width: double.maxFinite,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    BottomMenuItemWidget(
+                      svgIcon: SvgPath.icTranslate,
+                      onPressed: () {},
+                    ),
+                    BottomMenuItemWidget(
+                      svgIcon: SvgPath.icOpenBook,
+                      onPressed: () {},
+                    ),
+                    BottomMenuItemWidget(
+                      svgIcon: SvgPath.icPLay,
+                      onPressed: () {},
+                    ),
+                    BottomMenuItemWidget(
+                      svgIcon: SvgPath.icCategory,
+                      onPressed: () {},
+                    ),
+                    BottomMenuItemWidget(
+                      svgIcon: SvgPath.icPaste,
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ],
       ),
       extendBody: true,
-      bottomNavigationBar: Container(
-        height: 120.px,
-        decoration: const BoxDecoration(
-          //color: Colors.red,
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/images/bottombar.png',
-            ),
-            fit: BoxFit.fill,
-          ),
-        ),
-        alignment: Alignment.bottomCenter,
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          unselectedItemColor: const Color(0xff788A95),
-          elevation: 0,
-          unselectedLabelStyle: TextStyle(
-            color: const Color(0xff788A95),
-            fontSize: 10.px,
-          ),
-          selectedLabelStyle: TextStyle(
-            color: QuranColors.greenCrayola,
-            fontSize: 10.px,
-          ),
-          items: [
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(SvgPath.icTranslate), label: ''),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(SvgPath.icOpenBook), label: ''),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(SvgPath.icPLay), label: ''),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(SvgPath.icCategory), label: ''),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(SvgPath.icPaste), label: ''),
-          ],
-        ),
-      ),
     );
   }
 
@@ -196,4 +220,3 @@ class SurahDetailsPage extends StatelessWidget {
     );
   }
 }
-

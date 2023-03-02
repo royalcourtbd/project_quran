@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/core/util/util.dart';
-import 'package:project_quran/data/common/custom_appbar.dart';
+
 import 'package:project_quran/presentation/home/widgets/search_section.dart';
 import 'package:project_quran/presentation/memorise/widgets/single_plan_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -14,35 +11,17 @@ class MemorisePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 89.px),
-      child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          elevation: 0,
-          backgroundColor: Theme.of(context).primaryColor,
-          child: SvgPicture.asset(SvgPath.icPlusSign),
-          onPressed: () {},
-        ),
-        body: Column(
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
           children: [
-            CustomAppBar(
-              appBarTitle: 'Memorization',
-              trailing: SvgPicture.asset(SvgPath.icLogout),
+            SizedBox(height: 15.px),
+            SearchSection(
+              searchTitel: 'Search Bookmark, Ayat pins, Notes',
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    SizedBox(height: 15.px),
-                    SearchSection(
-                      searchTitel: 'Search Bookmark, Ayat pins, Notes',
-                    ),
-                    SizedBox(height: 10.px),
-                    const SinglePlanWidget(),
-                    SizedBox(height: QuranScreen.width() * .3),
-                  ],
-                ),
-              ),
-            ),
+            SizedBox(height: 10.px),
+            const SinglePlanWidget(),
+            // SizedBox(height: QuranScreen.width() * .3),
           ],
         ),
       ),

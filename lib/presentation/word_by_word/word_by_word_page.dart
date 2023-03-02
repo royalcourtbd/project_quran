@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/core/assets/svg_path.dart';
-import 'package:project_quran/data/common/back_button.dart';
-import 'package:project_quran/data/common/simple_app_bar.dart';
+import 'package:project_quran/presentation/widgets/back_button.dart';
+import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
+import 'package:project_quran/presentation/settings/mini_settings/mini_settings_drawer.dart';
 import 'package:project_quran/presentation/word_by_word/sura_list.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -16,21 +17,24 @@ class WordByWordPage extends StatelessWidget {
     return Scaffold(
         body: Scaffold(
       backgroundColor: const Color(0xffF1F4F8),
+      endDrawer: const MiniSettingsDrawer(),
       body: Column(
         children: [
-          Container(
-            decoration: const BoxDecoration(color: QuranColors.whiteColor),
-            height: MediaQuery.of(context).padding.top,
-          ),
           SimpleAppBar(
             appBarTitle: 'surahModel.surahNameEn',
             leading: CustomButton(
               onTap: () => Get.back(),
               svgPath: SvgPath.icArrowForword,
             ),
-            trailing: CustomButton(
-              onTap: () => Get.back(),
-              svgPath: SvgPath.icSetting,
+            trailing: Builder(
+              builder: (context) {
+                return CustomButton(
+                  svgPath: SvgPath.icSetting,
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                );
+              },
             ),
           ),
           Expanded(

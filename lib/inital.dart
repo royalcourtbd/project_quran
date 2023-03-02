@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/presentation/config/theme_service.dart';
-import 'package:project_quran/presentation/main/root.dart';
+import 'package:project_quran/presentation/nurani_quran/nurani_quran_page.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -27,7 +27,7 @@ class Initial extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: _themeService.greenTheme(),
           title: 'Quran',
-          home: const MainPage(),
+          home: const NuraniQuranPage(),
         );
       },
     );
