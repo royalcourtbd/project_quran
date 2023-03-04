@@ -64,8 +64,6 @@ class ThemeToggleItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           onToggle(false);
-          print('object');
-          print(onToggle);
         },
         child: Container(
           padding: EdgeInsets.all(10.px),

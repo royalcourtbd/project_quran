@@ -9,7 +9,6 @@ import 'package:project_quran/presentation/home/widgets/search_section.dart';
 import 'package:project_quran/presentation/home/widgets/surah_list_widget.dart';
 import 'package:project_quran/presentation/home/widgets/tab_button.dart';
 import 'package:project_quran/presentation/nurani_quran/nurani_quran_page.dart';
-import 'package:project_quran/presentation/quick_access/quick_access_setting.dart';
 import 'package:project_quran/presentation/search/search_page.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 

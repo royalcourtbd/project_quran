@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_quran/presentation/widgets/back_button.dart';
-import 'package:project_quran/presentation/widgets/simple_app_bar.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:project_quran/presentation/our_project/project_list.dart';
 import 'package:project_quran/presentation/our_project/widgets/download_button.dart';

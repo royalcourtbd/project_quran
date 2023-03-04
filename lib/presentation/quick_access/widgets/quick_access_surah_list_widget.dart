@@ -66,7 +66,7 @@ class QuickAccseeSurahListWidget extends StatelessWidget {
                                   fontSize: 14.px,
                                 ),
                           ),
-                          SizedBox(height: 10.px),
+                          SizedBox(height: 12.px),
                           Row(
                             children: [
                               Text(

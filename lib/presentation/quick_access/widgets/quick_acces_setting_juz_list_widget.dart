@@ -33,7 +33,7 @@ class QuickAccessSettingJuzListWidget extends StatelessWidget {
               trailing: const SizedBox.shrink(),
               title: Container(
                 padding:
-                    EdgeInsets.symmetric(vertical: 15.px, horizontal: 12.px),
+                    EdgeInsets.symmetric(vertical: 15.px, horizontal: 13.px),
                 decoration: BoxDecoration(
                   color: QuranColors.whiteColor,
                   borderRadius: BorderRadius.circular(10.px),
@@ -56,7 +56,7 @@ class QuickAccessSettingJuzListWidget extends StatelessWidget {
                                     fontSize: 14.px,
                                   ),
                             ),
-                            SizedBox(height: 10.px),
+                            SizedBox(height: 8.px),
                             Text(
                               '${allSurahList[index].surahNameEn} - ${allSurahList[index].ayah} Ayah',
                               style: Theme.of(context)
