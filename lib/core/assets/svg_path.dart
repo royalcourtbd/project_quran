@@ -63,4 +63,9 @@ class SvgPath {
   static const String icMenu2 = 'assets/images/menu.svg';
   static const String icBookmark2 = 'assets/images/bookmark2.svg';
   static const String icQuranPage = 'assets/images/quran_page.png';
+  static const String icCheckSign = 'assets/images/check_sign.svg';
+  static const String icDownload = 'assets/images/download_icon.svg';
+  static const String icDownload2 = 'assets/images/download_icon_2.svg';
+  static const String icDelete = 'assets/images/delete_icon.svg';
+  static const String icUpload = 'assets/images/upload_icon.svg';
 }

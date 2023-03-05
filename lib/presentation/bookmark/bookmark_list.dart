@@ -1,4 +1,5 @@
 import 'package:project_quran/core/assets/svg_path.dart';
+import 'package:project_quran/data/model/bookmark_ayat_model.dart';
 import 'package:project_quran/data/model/bookmark_model.dart';
 
 List<BookmarkModel> bookmarkList = [
@@ -98,4 +99,10 @@ List<BookmarkModel> bookmarkList = [
     subTitle: '4 Bookmarked',
     optionIconPath: SvgPath.icVirtical,
   ),
+];
+List<BookmarkAyatkModel> pinAyatList = [
+  BookmarkAyatkModel(suraName: 'Al Muddaththir', ayatNumber: 22),
+  BookmarkAyatkModel(suraName: 'Al Muddaththir', ayatNumber: 22),
+  BookmarkAyatkModel(suraName: 'Al Muddaththir', ayatNumber: 22),
+  BookmarkAyatkModel(suraName: 'Al Muddaththir', ayatNumber: 22),
 ];

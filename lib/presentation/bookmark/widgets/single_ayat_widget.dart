@@ -8,8 +8,8 @@ import 'package:project_quran/presentation/bookmark/bookmark_list.dart';
 import 'package:project_quran/presentation/config/quran_colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SingleBookmarkItemWidget extends StatelessWidget {
-  const SingleBookmarkItemWidget({
+class SingleAyatWidget extends StatelessWidget {
+  const SingleAyatWidget({
     super.key,
   });
 

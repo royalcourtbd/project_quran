@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_quran/buisness_logic/controllers/tab_button_controller.dart';
+import 'package:project_quran/presentation/bookmark/widgets/single_ayat_widget.dart';
 
 import 'package:project_quran/presentation/bookmark/widgets/single_bookmark_widget.dart';
 import 'package:project_quran/presentation/bookmark/widgets/tab_button.dart';
@@ -8,7 +9,8 @@ import 'package:project_quran/presentation/home/widgets/search_section.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BookmarkPage extends StatelessWidget {
-  const BookmarkPage({super.key});
+  TabButtonController tabButtonController = Get.put(TabButtonController());
+  BookmarkPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,9 @@ class BookmarkPage extends StatelessWidget {
             ),
             SizedBox(height: 10.px),
             BookmarkPageTabbutton(),
-            const SingleBookmarkItemWidget(),
+            tabButtonController.bookmarkPageTabCurrentIndex.value == 0
+                ? const SingleBookmarkItemWidget()
+                : const SingleAyatWidget(),
             SizedBox(height: 70.px),
           ],
         ),

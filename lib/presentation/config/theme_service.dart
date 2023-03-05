@@ -475,8 +475,6 @@ class ThemeService extends GetxService {
           selectionColor: const Color(0xff3BB06E).withOpacity(0.5),
           selectionHandleColor: const Color(0xff3BB06E)),
       disabledColor: const Color(0xff7F909F),
-      
-      
       dividerColor: const Color(0xffDEDEDE),
       primaryColorLight: Colors.white,
       secondaryHeaderColor: const Color(0xff3BB06E),
@@ -522,8 +520,6 @@ class ThemeService extends GetxService {
         primary: Color(0xff3BB06E),
         secondary: Color(0xFF0B9D4A),
         surface: Color(0xFFFFFFFF),
-
-        
       ),
     );
   }
